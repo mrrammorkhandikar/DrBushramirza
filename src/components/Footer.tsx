@@ -53,7 +53,7 @@ const Footer = () => {
                         <ul className="space-y-4 text-neutralLight">
                             <li className="flex items-start space-x-3">
                                 <MapPin className="w-5 h-5 mt-0.5 text-tealSoft flex-shrink-0" />
-                                <p>123 Dental St, Pune, Maharashtra, 411000, India</p>
+                                <p>2nd floor, Teddy's Apartment, Global Health Hub Dental and Polyclinic, Chowk, opp. Gera Junction, Lullanagar, Pune, Maharashtra 411040</p>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 text-tealSoft" />
@@ -61,27 +61,9 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Phone className="w-5 h-5 text-tealSoft" />
-                                <p><a href="tel:+911234567890" className="hover:text-goldAccent transition">+91 123 456 7890</a></p>
+                                <p><a href="tel:+911234567890" className="hover:text-goldAccent transition">+91 9529045550</a></p>
                             </li>
-                            <li className="pt-2">
-                                <div className="text-sm">
-                                    <h5 className="font-bold uppercase tracking-wider text-white mb-4">Contact Us</h5>
-                                    <div className="space-y-3">
-                                        <p className="flex items-start">
-                                            <MapPin className="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-goldAccent" />
-                                            <span>2nd floor, Teddy's Apartment, Global Health Hub Dental and Polyclinic, Chowk, opp. Gera Junction, Lullanagar, Pune, Maharashtra 411040</span>
-                                        </p>
-                                        <p className="flex items-center">
-                                            <Phone className="w-4 h-4 mr-3 text-goldAccent" />
-                                            <a href="tel:+919529045550" className="hover:text-goldAccent transition-colors">+91 9529045550</a>
-                                        </p>
-                                        <p className="flex items-center">
-                                            <Phone className="w-4 h-4 mr-3 text-goldAccent" />
-                                            <a href="tel:+919529045550" className="hover:text-goldAccent transition-colors">+91 9529045550</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
+                            
                             <li className="pt-2">
                                 <p className="font-semibold text-white">Mon - Sat: 10:00 AM - 7:00 PM</p>
                                 <p className="text-sm">Sunday: Closed</p>
