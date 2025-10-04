@@ -18,7 +18,7 @@ const Footer = () => {
                         <Link href="/" className="flex items-center justify-center space-x-3">
                             <Image
                                 src="/Images/General/TheLogo.jpeg"
-                                alt="Dr. Bushra's Dental Clinic Logo"
+                                alt="Dr. Bushra&apos;s Dental Clinic Logo"
                                 width={125} // Increased from 75 to 85
                                 height={125} // Increased from 75 to 85
                                 className="rounded-full ring-2 ring-goldAccent"
