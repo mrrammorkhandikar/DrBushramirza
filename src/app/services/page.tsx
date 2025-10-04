@@ -78,7 +78,7 @@ const serviceData = [
     {
         title: 'Braces & Orthodontics',
         description: 'Comprehensive orthodontic treatments — metal braces, ceramic braces, and clear aligners for better-aligned teeth.',
-        imgSrc: '/Images/Services/braces.jpg',
+        imgSrc: '/Images/Services/Braces.jpg',
         slug: 'braces-orthodontics',
         price: 'Starting from 30K',
         duration: 'Varies'
