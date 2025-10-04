@@ -37,7 +37,7 @@ const ServiceCard = ({ title, description, imgSrc, slug }: ServiceCardProps) => 
                 <p className="text-gray-600 mb-4 flex-grow text-base line-clamp-3">{description}</p>
 
                 <Link
-                    href={`/services/${slug}`}
+                    href={`/services`}
                     className="text-brownAccent font-semibold hover:text-goldAccent transition duration-300 mt-auto flex items-center group"
                 >
                     View Details

@@ -16,7 +16,7 @@ const serviceData = [
         description: 'Professional in-office whitening for safe and quick brightening. Options for single arch or full mouth.',
         imgSrc: '/Images/Services/TeethWhitening.avif',
         slug: 'teeth-whitening',
-        price: '4000 single arch, 7000 full mouth',
+        price: '7000 full mouth ,\n4000 single arch',
         duration: '45-60 min'
     },
     {
@@ -33,7 +33,7 @@ const serviceData = [
         imgSrc: '/Images/Services/RootCanalTreatment.jpg',
         slug: 'root-canal-treatment',
         price: 'starting from 2500',
-        duration: '1-2 visits'
+        duration: '1-3 visits'
     },
     {
         title: 'Dental Crowns',
@@ -41,7 +41,7 @@ const serviceData = [
         imgSrc: '/Images/Services/DentalCrowns.jpg',
         slug: 'dental-crowns',
         price: 'Metal-ceramic 3500, Full Ceramic – 6000',
-        duration: '2-3 visits'
+        duration: '2 visits'
     },
     {
         title: 'Smile Designing',
@@ -81,7 +81,7 @@ const serviceData = [
         imgSrc: '/Images/Services/Braces.jpg',
         slug: 'braces-orthodontics',
         price: 'Starting from 30K',
-        duration: 'Varies'
+        duration: '6-18 months'
     },
 ];
 // ==========================================================
@@ -145,7 +145,7 @@ const ServiceCard = ({ service, index }: { service: typeof serviceData[0]; index
             
             {/* Price and Duration Info */}
             <div className="flex justify-between items-center text-sm pt-2 border-t border-neutralLight">
-                <p className="flex items-center text-brownAccent font-semibold">
+                <p className="flex items-center text-brownAccent font-semibold whitespace-pre-line">
                     <IndianRupee className="w-4 h-4 mr-1" />
                     {service.price}
                 </p>
