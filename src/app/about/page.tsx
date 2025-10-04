@@ -79,7 +79,7 @@ const AboutPage = () => {
                             The Story Behind Your Smile
                         </h1>
                         <p className="text-xl text-white/90 mt-4 max-w-2xl mx-auto">
-                            Delivering compassionate, affordable, and world-class dental care in Pune since 20XX.
+                            Delivering compassionate, affordable, and world-class dental care in Pune.
                         </p>
                     </motion.div>
                 </div>

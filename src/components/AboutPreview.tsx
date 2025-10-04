@@ -21,7 +21,7 @@ const AboutPreview = () => {
                     className="space-y-6 md:order-2" 
                 >
                     <p className="text-sm font-semibold uppercase text-tealSoft tracking-widest">
-                        Welcome to Dr. Bushra&apos;s Dental Clinic
+                        Welcome to Dr. Bushra&apos;s Dental Care
                     </p>
 
                     <h2 className="text-4xl font-bold text-primary leading-snug">
@@ -29,7 +29,7 @@ const AboutPreview = () => {
                     </h2>
 
                   <p className="text-lg text-gray-800 leading-relaxed mb-6">
-                      Dr. Bushra&apos;s Dental Clinic is equipped with <strong>modern facilities</strong> — from digital radiography to advanced sterilization protocols. Dr. Bushra Mirza ensures every patient receives <strong>painless, personalized, and accessible</strong> dental care.
+                      Dr. Bushra&apos;s Dental Care is equipped with <strong>modern facilities</strong> — from digital radiography to advanced sterilization protocols. Dr. Bushra Mirza ensures every patient receives <strong>painless, personalized, and accessible</strong> dental care.
                   </p>
 
                     <div className="pt-4">

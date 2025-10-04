@@ -19,13 +19,13 @@ const Footer = () => {
                             <Image
                                 src="/Images/General/TheLogo.jpeg"
                                 alt="Dr. Bushra&apos;s Dental Clinic Logo"
-                                width={125} // Increased from 75 to 85
+                                width={300} // Increased from 75 to 85
                                 height={125} // Increased from 75 to 85
-                                className="rounded-full ring-2 ring-goldAccent"
+                                className="rounded-2xl ring-2 ring-goldAccent"
                             />
                             
                         </Link>
-                        <p className="text-neutralLight text-sm">
+                    {/*     <p className="text-neutralLight text-sm">
                             Providing Pune with painless, modern, and affordable dental care for the whole family. Your smile is our priority.
                         </p>
                         <Link
@@ -33,7 +33,7 @@ const Footer = () => {
                             className="flex justify-center items-center bg-goldAccent text-primary font-bold px-6 py-2 rounded-lg shadow-md hover:bg-brownAccent hover:text-white transition duration-300"
                         >
                             Get Directions
-                        </Link>
+                        </Link> */}
                     </div>
 
                     {/* Column 2: Quick Links */}
@@ -88,7 +88,7 @@ const Footer = () => {
                 </div>
                 
                 <div className="border-t border-tealSoft/50 pt-8 text-center text-neutralLight text-sm">
-                    <p>&copy; {new Date().getFullYear()} Dr. Bushra&apos;s Dental Clinic. All rights reserved. | Design by [Your Name/Company]</p>
+                    <p>&copy; {new Date().getFullYear()} Dr. Bushra&apos;s Dental Care. All rights reserved. | Design by [Your Name/Company]</p>
                 </div>
             </div>
             

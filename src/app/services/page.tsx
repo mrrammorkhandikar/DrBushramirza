@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Zap, Heart, Microscope, DollarSign, ArrowRight, IndianRupee, Clock } from 'lucide-react'; 
+import { useState, useEffect } from 'react';
 
 // ==========================================================
 // 1. SERVICE DATA (COMBINED FROM SERVICES/[SLUG]/PAGE.TSX)
@@ -16,7 +17,7 @@ const serviceData = [
         description: 'Professional in-office whitening for safe and quick brightening. Options for single arch or full mouth.',
         imgSrc: '/Images/Services/TeethWhitening.avif',
         slug: 'teeth-whitening',
-        price: '7000 full mouth ,\n4000 single arch',
+        price: '7000 full mouth ,4000 single arch',
         duration: '45-60 min'
     },
     {
@@ -118,53 +119,72 @@ const features = [
     },
 ];
 
-// Component for a single service card (INLINED GRID ITEM)
-const ServiceCard = ({ service, index }: { service: typeof serviceData[0]; index: number }) => (
-    <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
-        className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-primary/10"
-    >
-        <div className="relative w-full aspect-[16/9] md:aspect-[4/3]">
-            <Image 
-                src={service.imgSrc} 
-                alt={service.title} 
-                fill 
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors"></div>
-        </div>
-        <div className="p-6 space-y-3">
-            <h3 className="text-2xl font-bold text-primary group-hover:text-brownAccent transition duration-300">
-                {service.title}
-            </h3>
-            <p className="text-gray-600 text-sm h-10 overflow-hidden">{service.description}</p>
-            
-            {/* Price and Duration Info */}
-            <div className="flex justify-between items-center text-sm pt-2 border-t border-neutralLight">
-                <p className="flex items-center text-brownAccent font-semibold whitespace-pre-line">
-                    <IndianRupee className="w-4 h-4 mr-1" />
-                    {service.price}
-                </p>
-                <p className="flex items-center text-tealSoft">
-                    <Clock className="w-4 h-4 mr-1" />
-                    {service.duration}
-                </p>
-            </div>
+// Helper function to format price based on window width
+const formatPrice = (price: string, isMobile: boolean) => {
+    if (isMobile && price.includes(',')) {
+        return price.replace(',', ',\n');
+    }
+    return price;
+};
 
-            <Link 
-                href={`/contact`} 
-                className="inline-flex items-center text-primary font-bold hover:text-goldAccent transition pt-2"
-            >
-                Book Appointment Now 
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
-        </div>
-    </motion.div>
-);
+// Component for a single service card (INLINED GRID ITEM)
+const ServiceCard = ({ service, index }: { service: typeof serviceData[0]; index: number }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return (
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-primary/10"
+        >
+            <div className="relative w-full aspect-[16/9] md:aspect-[4/3]">
+                <Image 
+                    src={service.imgSrc} 
+                    alt={service.title} 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors"></div>
+            </div>
+            <div className="p-6 space-y-3">
+                <h3 className="text-2xl font-bold text-primary group-hover:text-brownAccent transition duration-300">
+                    {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm h-10 overflow-hidden">{service.description}</p>
+                
+                {/* Price and Duration Info */}
+                <div className="flex justify-between items-center text-sm pt-2 border-t border-neutralLight">
+                    <p className="flex items-center text-brownAccent font-semibold whitespace-pre-line">
+                        <IndianRupee className="w-4 h-4 mr-1" />
+                        {formatPrice(service.price, isMobile)}
+                    </p>
+                    <p className="flex items-center text-tealSoft">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {service.duration}
+                    </p>
+                </div>
+
+                <Link 
+                    href={`/contact`} 
+                    className="inline-flex items-center text-primary font-bold hover:text-goldAccent transition pt-2"
+                >
+                    Book Appointment Now 
+                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+            </div>
+        </motion.div>
+    );
+};
 
 
 const ServicesPage = () => {
