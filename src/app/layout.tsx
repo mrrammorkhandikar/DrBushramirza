@@ -1,14 +1,22 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// src/app/layout.tsx
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import type { Metadata } from "next";
+// Reverting to the custom fonts defined previously, as your CSS relies on them
+import { Playfair_Display, Inter } from "next/font/google"; 
+import "./globals.css";
+import Header from '../components/Header'; // You need to import this here
+import Footer from '../components/Footer'; // You need to import this here
+
+
+// Re-defining the fonts and variables used by your Tailwind config
+const headingFont = Playfair_Display({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -25,9 +33,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // 💥 FIX: All base classes are applied here to bypass the PostCSS error.
+        className={`
+          bg-neutralGray 
+          ${headingFont.variable} ${bodyFont.variable} 
+          font-body antialiased
+        `}
       >
-        {children}
+        {/* 💥 FIX: Re-adding Header to the layout */}
+        <Header />
+        
+        {/* 💥 FIX: Adding the max-width content wrapper */}
+        <div className="">
+            {children}
+        </div>
+
+        {/* 💥 FIX: Re-adding Footer to the layout */}
+        <Footer />
       </body>
     </html>
   );
