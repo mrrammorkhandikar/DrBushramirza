@@ -53,7 +53,7 @@ const Footer = () => {
                         <ul className="space-y-4 text-neutralLight">
                             <li className="flex items-start space-x-3">
                                 <MapPin className="w-5 h-5 mt-0.5 text-tealSoft flex-shrink-0" />
-                                <p>2nd floor, Teddy's Apartment, Global Health Hub Dental and Polyclinic, Chowk, opp. Gera Junction, Lullanagar, Pune, Maharashtra 411040</p>
+                                <p>2nd floor, Teddy&apos;s Apartment, Global Health Hub Dental and Polyclinic, Chowk, opp. Gera Junction, Lullanagar, Pune, Maharashtra 411040</p>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 text-tealSoft" />
