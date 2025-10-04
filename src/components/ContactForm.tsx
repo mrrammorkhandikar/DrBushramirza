@@ -82,23 +82,9 @@ const ContactForm = () => {
                         {/* Map Snippet */}
                         <div className="h-48 rounded-lg overflow-hidden shadow-md">
                             <iframe
-                                src="https://maps.google.com/maps?q=Pune,India&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.1305883957775!2d73.88630324631445!3d18.48564629574462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ebac96f3f173%3A0x858d83b2369d312!2sDr%20Bushra&#39;s%20Dental%20Care!5e0!3m2!1sen!2sin!4v1759553231418!5m2!1sen!2sin"
                                 width="100%"
                                 height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen={false}
-                                loading="lazy"
-                                aria-hidden="false"
-                                tabIndex={0}
-                            ></iframe>
-                        </div>
-                        
-                        {/* Map Snippet */}
-                        <div className="mt-12 rounded-lg overflow-hidden shadow-xl">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30271.956974401706!2d73.86107066512967!3d18.48390281117315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDr%20Bushra%20Mirza%20Dentist%20Lulla%20Nagar-Wanowrie%2C%20Pune!5e0!3m2!1sen!2sin!4v1759552013049!5m2!1sen!2sin" 
-                                width="100%" 
-                                height="450" 
                                 style={{ border: 0 }}
                                 allowFullScreen={false}
                                 loading="lazy"
