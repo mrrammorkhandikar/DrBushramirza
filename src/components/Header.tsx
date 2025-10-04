@@ -26,7 +26,7 @@ const Header = () => {
                         className="rounded-full ring-2 ring-goldAccent" 
                     />
                     <span className="text-xl font-bold tracking-tight hidden sm:block">Dr. Bushra's Dental Clinic</span>
-                    <span className="text-xl font-bold tracking-tight sm:hidden">Dr. Bushra's</span>
+                    <span className="text-xl font-bold tracking-tight sm:hidden">Dr. Bushra's Clinic</span>
                 </Link>
 
                 {/* Desktop Navigation Links */}
