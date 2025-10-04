@@ -64,6 +64,25 @@ const Footer = () => {
                                 <p><a href="tel:+911234567890" className="hover:text-goldAccent transition">+91 123 456 7890</a></p>
                             </li>
                             <li className="pt-2">
+                                <div className="text-sm">
+                                    <h5 className="font-bold uppercase tracking-wider text-white mb-4">Contact Us</h5>
+                                    <div className="space-y-3">
+                                        <p className="flex items-start">
+                                            <MapPin className="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-goldAccent" />
+                                            <span>2nd floor, Teddy's Apartment, Global Health Hub Dental and Polyclinic, Chowk, opp. Gera Junction, Lullanagar, Pune, Maharashtra 411040</span>
+                                        </p>
+                                        <p className="flex items-center">
+                                            <Phone className="w-4 h-4 mr-3 text-goldAccent" />
+                                            <a href="tel:+919529045550" className="hover:text-goldAccent transition-colors">+91 9529045550</a>
+                                        </p>
+                                        <p className="flex items-center">
+                                            <Phone className="w-4 h-4 mr-3 text-goldAccent" />
+                                            <a href="tel:+919529045550" className="hover:text-goldAccent transition-colors">+91 9529045550</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="pt-2">
                                 <p className="font-semibold text-white">Mon - Sat: 10:00 AM - 7:00 PM</p>
                                 <p className="text-sm">Sunday: Closed</p>
                             </li>
@@ -90,6 +109,17 @@ const Footer = () => {
                     <p>&copy; {new Date().getFullYear()} Dr. Bushra&apos;s Dental Clinic. All rights reserved. | Design by [Your Name/Company]</p>
                 </div>
             </div>
+            
+            {/* Floating WhatsApp Button */}
+            <a
+                href="https://wa.me/919529045550"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-50"
+                aria-label="Chat on WhatsApp"
+            >
+                <MessageCircle className="w-8 h-8" />
+            </a>
         </footer>
     );
 };

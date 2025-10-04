@@ -92,6 +92,20 @@ const ContactForm = () => {
                                 tabIndex={0}
                             ></iframe>
                         </div>
+                        
+                        {/* Map Snippet */}
+                        <div className="mt-12 rounded-lg overflow-hidden shadow-xl">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30271.956974401706!2d73.86107066512967!3d18.48390281117315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDr%20Bushra%20Mirza%20Dentist%20Lulla%20Nagar-Wanowrie%2C%20Pune!5e0!3m2!1sen!2sin!4v1759552013049!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="450" 
+                                style={{ border: 0 }}
+                                allowFullScreen={false}
+                                loading="lazy"
+                                aria-hidden="false"
+                                tabIndex={0}
+                            ></iframe>
+                        </div>
 
                     </motion.div>
 
