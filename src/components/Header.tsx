@@ -19,14 +19,14 @@ const Header = () => {
                 {/* Logo and Clinic Name */}
                 <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
                     <Image 
-                        src="/Images/General/TheLogo.jpeg" 
+                        src="/Images/General/TheToothLogo2.png" 
                         alt="Dr. Bushra&apos;s Dental Clinic Logo" 
                         width={40} 
                         height={40} 
                         className="rounded-full ring-2 ring-goldAccent" 
                     />
-                    <span className="text-xl font-bold tracking-tight hidden sm:block">Dr. Bushra&apos;s Dental Care</span>
-                    <span className="text-xl font-bold tracking-tight sm:hidden">Dr. Bushra&apos;s Dental Care</span>
+                    <span className="text-xl font-bold tracking-tight hidden sm:block px-1"> Dr. Bushra&apos;s Dental Care</span>
+                    <span className="text-xl font-bold tracking-tight sm:hidden px-1"> Dr. Bushra&apos;s Dental Care</span>
                 </Link>
 
                 {/* Desktop Navigation Links */}
