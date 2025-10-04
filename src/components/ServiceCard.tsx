@@ -10,13 +10,13 @@ interface ServiceCardProps {
     title: string;
     description: string;
     imgSrc: string;
+    slug: string;
 }
 
-const ServiceCard = ({ title, description, imgSrc }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, imgSrc, slug }: ServiceCardProps) => {
     return (
-        // The card width (w-96) and gap (space-x-8) are critical for the carousel logic
         <motion.div
-            className="bg-white shadow-xl rounded-xl overflow-hidden flex flex-col w-96 min-w-96 border border-primary/10 transition-shadow duration-300"
+            className="bg-white shadow-xl rounded-xl overflow-hidden flex flex-col h-full border border-primary/10 transition-shadow duration-300"
             whileHover={{ scale: 1.02, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.15)" }}
         >
 
@@ -26,7 +26,7 @@ const ServiceCard = ({ title, description, imgSrc }: ServiceCardProps) => {
                     src={imgSrc}
                     alt={title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 hover:scale-110"
                 />
                 {/* Subtle overlay */}
@@ -39,7 +39,7 @@ const ServiceCard = ({ title, description, imgSrc }: ServiceCardProps) => {
                 <p className="text-gray-600 mb-4 flex-grow text-base line-clamp-3">{description}</p>
 
                 <Link
-                    href="/services"
+                    href={`/services/${slug}`}
                     className="text-brownAccent font-semibold hover:text-goldAccent transition duration-300 mt-auto flex items-center group"
                 >
                     View Details
