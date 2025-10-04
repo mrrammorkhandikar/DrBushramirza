@@ -25,7 +25,7 @@ const Footer = () => {
                             />
                             
                         </Link>
-                    {/*     <p className="text-neutralLight text-sm">
+                    <p className="text-neutralLight text-sm">
                             Providing Pune with painless, modern, and affordable dental care for the whole family. Your smile is our priority.
                         </p>
                         <Link
@@ -33,7 +33,7 @@ const Footer = () => {
                             className="flex justify-center items-center bg-goldAccent text-primary font-bold px-6 py-2 rounded-lg shadow-md hover:bg-brownAccent hover:text-white transition duration-300"
                         >
                             Get Directions
-                        </Link> */}
+                        </Link> 
                     </div>
 
                     {/* Column 2: Quick Links */}
