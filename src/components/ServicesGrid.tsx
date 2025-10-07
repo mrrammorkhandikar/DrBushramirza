@@ -46,7 +46,7 @@ const ServicesGrid: React.FC = () => {
                     href="/services"
                     className="inline-flex items-center justify-center bg-brownAccent text-white px-10 py-4 rounded-xl shadow-xl hover:bg-goldAccent transition transform hover:scale-[1.02] duration-300 font-semibold text-lg"
                 >
-                    All Services We Providet
+                    All Services We Provide
                 </Link>
             </div>
         </section>
