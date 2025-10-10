@@ -88,7 +88,7 @@ const Footer = () => {
                 </div>
                 
                 <div className="border-t border-tealSoft/50 pt-8 text-center text-neutralLight text-sm">
-                    <p>&copy; {new Date().getFullYear()} Dr. Bushra&apos;s Dental Care. All rights reserved. | Design by [Your Name/Company]</p>
+                    <p>&copy; {new Date().getFullYear()} Dr. Bushra&apos;s Dental Care. All rights reserved.</p>
                 </div>
             </div>
             
