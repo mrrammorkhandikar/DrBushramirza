@@ -1,5 +1,3 @@
-'use client';
-
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 
 interface BeforeAfterSliderProps {
@@ -8,12 +6,13 @@ interface BeforeAfterSliderProps {
   alt: string;
 }
 
-const BeforeAfterSlider = ({ before, after, alt }: BeforeAfterSliderProps) => {
+const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ before, after, alt }) => {
   return (
     <ReactCompareSlider
+      onlyHandleDraggable={true}
       itemOne={<ReactCompareSliderImage src={before} alt={`Before - ${alt}`} />}
       itemTwo={<ReactCompareSliderImage src={after} alt={`After - ${alt}`} />}
-      className="rounded-lg"
+      style={{ width: '100%', height: '100%' }}
     />
   );
 };

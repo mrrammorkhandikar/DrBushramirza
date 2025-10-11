@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import BeforeAfterSlider from './BeforeAfterSlider';
+import { motion } from 'framer-motion';
+import DelayedBeforeAfterSlider from './DelayedBeforeAfterSlider';
 
 interface StandardImage {
   src: string;
@@ -50,6 +51,12 @@ const Gallery = () => {
 
   const filteredImages = filter === 'All' ? allImages : allImages.filter(image => image.category === filter);
 
+  const openLightbox = (image: StandardImage) => {
+    const standardImages = allImages.filter((img): img is StandardImage => img.category !== 'Before & After');
+    setIndex(standardImages.indexOf(image));
+    setOpen(true);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-8">Gallery</h1>
@@ -61,23 +68,23 @@ const Gallery = () => {
         <button onClick={() => setFilter('Before & After')} className={`px-4 py-2 rounded-lg ${filter === 'Before & After' ? 'bg-primary text-white' : 'bg-gray-200'}`}>Before & After</button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filteredImages.map((image, idx) => (
-          <div key={idx} className="cursor-pointer" onClick={() => { if(image.category !== 'Before & After') { setIndex(allImages.filter(img => img.category !== 'Before & After').indexOf(image)); setOpen(true); } }}>
+          <motion.div layout key={idx} className="relative overflow-hidden rounded-lg cursor-pointer" onClick={() => image.category !== 'Before & After' && openLightbox(image as StandardImage)} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
             {image.category === 'Before & After' ? (
-              <BeforeAfterSlider before={image.before} after={image.after} alt={image.alt} />
+              <DelayedBeforeAfterSlider before={image.before} after={image.after} alt={image.alt} />
             ) : (
               <Image
                 src={image.src}
                 alt={image.alt}
                 width={500}
                 height={500}
-                className="rounded-lg object-cover w-full h-full aspect-square"
+                className="w-full h-full object-cover"
               />
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <Lightbox
         open={open}
