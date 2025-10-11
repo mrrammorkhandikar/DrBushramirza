@@ -34,6 +34,7 @@ const Header = () => {
                     <li><Link href="/" className="hover:text-goldAccent transition">Home</Link></li>
                     <li><Link href="/services" className="hover:text-goldAccent transition">Services</Link></li>
                     <li><Link href="/about" className="hover:text-goldAccent transition">About</Link></li>
+                    <li><Link href="/gallery" className="hover:text-goldAccent transition">Gallery</Link></li>
                     <li><Link href="/contact" className="hover:text-goldAccent transition">Contact</Link></li>
                 </ul>
 
@@ -74,6 +75,7 @@ const Header = () => {
                             <li><Link href="/" className="text-xl hover:text-goldAccent transition" onClick={toggleMenu}>Home</Link></li>
                             <li><Link href="/services" className="text-xl hover:text-goldAccent transition" onClick={toggleMenu}>Services</Link></li>
                             <li><Link href="/about" className="text-xl hover:text-goldAccent transition" onClick={toggleMenu}>About</Link></li>
+                            <li><Link href="/gallery" className="text-xl hover:text-goldAccent transition" onClick={toggleMenu}>Gallery</Link></li>
                             <li><Link href="/contact" className="text-xl hover:text-goldAccent transition" onClick={toggleMenu}>Contact</Link></li>
                             <li>
                                 <Link
