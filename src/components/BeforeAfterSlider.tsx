@@ -16,5 +16,5 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ before, after, al
     />
   );
 };
-
+ 
 export default BeforeAfterSlider;
