@@ -5,17 +5,7 @@
 import Link from 'next/link';
 import ServiceCard from './ServiceCard';
 import { motion } from 'framer-motion';
-
-// --- Data with Slugs ---
-const services = [
-    { title: 'Teeth Whitening', slug: 'teeth-whitening', description: 'Professional in-office whitening for a brighter smile.', imgSrc: '/Images/Services/TeethWhitening.avif' },
-    { title: 'Dental Implants', slug: 'dental-implants', description: 'Permanent, natural-looking replacements for missing teeth.', imgSrc: '/Images/Services/DentalImplants.avif' },
-    { title: 'Root Canal Treatment', slug: 'root-canal-treatment', description: 'Painless, single-visit RCT to save your natural tooth.', imgSrc: '/Images/Services/RootCanalTreatment.webp' },
-    { title: 'Dental Crowns', slug: 'dental-crowns', description: 'Durable and aesthetic crowns for tooth restoration.', imgSrc: '/Images/Services/DentalCrowns.jpg' },
-    { title: 'Smile Designing', slug: 'smile-designing', description: 'Customized treatments for your perfect smile makeover.', imgSrc: '/Images/Services/SmileDesigning.webp' },
-    { title: 'Fillings', slug: 'fillings', description: 'Discreet, tooth-colored composite restorations.', imgSrc: '/Images/Services/Fillings.webp' },
-
-];
+import { featuredServices } from '@/data/services';
 
 const ServicesGrid: React.FC = () => {
     return (
@@ -28,7 +18,7 @@ const ServicesGrid: React.FC = () => {
             {/* Responsive Grid Layout */}
             <div className="container mx-auto px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
+                    {featuredServices.map((service, index) => (
                         <motion.div
                             key={service.slug}
                             initial={{ opacity: 0, y: 20 }}

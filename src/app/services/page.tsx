@@ -6,86 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Zap, Heart, Microscope, DollarSign, ArrowRight, IndianRupee, Clock } from 'lucide-react'; 
 import { useState, useEffect } from 'react';
-
-// ==========================================================
-// 1. SERVICE DATA (COMBINED FROM SERVICES/[SLUG]/PAGE.TSX)
-// This data now lives directly in the main services page for easy management.
-// ==========================================================
-const serviceData = [
-    {
-        title: 'Teeth Whitening',
-        description: 'Professional in-office whitening for safe and quick brightening. Options for single arch or full mouth.',
-        imgSrc: '/Images/Services/TeethWhitening.avif',
-        slug: 'teeth-whitening',
-        price: '7000 full mouth ,4000 single arch',
-        duration: '45-60 min'
-    },
-    {
-        title: 'Dental Implants',
-        description: 'Permanent solution for missing teeth. High-quality implants restore function and aesthetics.',
-        imgSrc: '/Images/Services/DentalImplants.avif',
-        slug: 'dental-implants',
-        price: '20k-40k per implant',
-        duration: 'Varies'
-    },
-    {
-        title: 'Root Canal Treatment',
-        description: 'Advanced, painless RCT using rotary endodontics. Available as single-visit or multiple visits.',
-        imgSrc: '/Images/Services/RootCanalTreatment.jpg',
-        slug: 'root-canal-treatment',
-        price: 'starting from 2500',
-        duration: '1-3 visits'
-    },
-    {
-        title: 'Dental Crowns',
-        description: 'Protect and restore damaged teeth with durable crowns. Options include metal-ceramic, full ceramic, and zirconia.',
-        imgSrc: '/Images/Services/DentalCrowns.jpg',
-        slug: 'dental-crowns',
-        price: 'Metal-ceramic 3500, Full Ceramic – 6000',
-        duration: '2 visits'
-    },
-    {
-        title: 'Smile Designing',
-        description: 'Customized cosmetic dental plan — combining veneers, crowns, whitening, and orthodontics for the perfect smile.',
-        imgSrc: '/Images/Services/SmileDesigning.webp',
-        slug: 'smile-designing',
-        price: 'Starting from 5000 onwards',
-        duration: 'Varies'
-    },
-    {
-        title: 'Fillings',
-        description: 'Tooth-colored composite fillings that restore function and blend naturally with your teeth.',
-        imgSrc: '/Images/Services/Fillings.webp',
-        slug: 'fillings',
-        price: '500-1500',
-        duration: '20-40 min'
-    },
-    {
-        title: 'Wisdom Tooth Extraction',
-        description: 'Safe surgical and non-surgical removal of third molars. Comfortable procedures with proper anesthesia and aftercare.',
-        imgSrc: '/Images/Services/WisdomToothExtraction.jpg',
-        slug: 'wisdom-tooth-extraction',
-        price: 'Third molar Extraction: 2000-5000',
-        duration: '30-60 min'
-    },
-    {
-        title: 'Pediatric Dental Care',
-        description: 'Gentle dental care for children. Focus on prevention, habit correction, and creating a positive dental experience.',
-        imgSrc: '/Images/Services/PediatricCare.jpg',
-        slug: 'pediatric-dental-care',
-        price: 'call for inquiry',
-        duration: 'Varies'
-    },
-    {
-        title: 'Braces & Orthodontics',
-        description: 'Comprehensive orthodontic treatments — metal braces, ceramic braces, and clear aligners for better-aligned teeth.',
-        imgSrc: '/Images/Services/Braces.jpg',
-        slug: 'braces-orthodontics',
-        price: 'Starting from 30K',
-        duration: '6-18 months'
-    },
-];
-// ==========================================================
+import { services as serviceData } from '@/data/services';
 
 // Data for the "Why Choose Us" section
 const features = [
@@ -175,10 +96,10 @@ const ServiceCard = ({ service, index }: { service: typeof serviceData[0]; index
                 </div>
 
                 <Link 
-                    href={`/contact`} 
+                    href={`/services/${service.slug}`} 
                     className="inline-flex items-center text-primary font-bold hover:text-goldAccent transition pt-2"
                 >
-                    Book Appointment Now 
+                    View Details 
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
             </div>
